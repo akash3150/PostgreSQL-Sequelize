@@ -23,7 +23,7 @@ exports.create = async (req, res) => {
     } catch (error) {
         res.status(500).send({
             message:
-                err.message || "Some error occurred while creating the Tutorial."
+                error.message || "Some error occurred while creating the Tutorial."
         });
     }
 };

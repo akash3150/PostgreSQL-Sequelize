@@ -3,7 +3,7 @@ const Joi = require('joi');
 exports.createUserValidation = (req, res, next) => {
     // create schema object
     const createUser = Joi.object({
-        name: Joi.string().required(),
+        name: Joi.string().optional(),
         email: Joi.string().email().required(),
         password: Joi.string().min(6).required()
     }).validate(req.body);
