@@ -44,7 +44,14 @@ module.exports = (sequelize, Sequelize) => {
         }
     }, {
         deletedAt: 'deletedAt',
-        timestamps: true
+        timestamps: true,
+        indexes: [
+            // Create a unique index on email
+            {
+                unique: true,
+                fields: ['email']
+            }
+        ]
     });
 
     return User;
